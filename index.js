@@ -118,3 +118,5 @@ app.listen(port,()=>console.log(`Listening to port ${port}`));
 
 
 //50:24 / 58:39 cwm
+
+//Making use of express , nodemon , joi@13.1.0 vs
