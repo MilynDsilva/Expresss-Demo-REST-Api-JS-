@@ -95,6 +95,22 @@ coursefound.name = req.body.name;
 res.send(coursefound);
 //return the updated course
 });
+app.delete('/api/courses/:id',(req,res)=>{
+    //look up the course
+    //not existing, return 404
+    const coursefound = courses.find((c)=>c.id === parseInt(req.params.id));
+    if(!coursefound) res.status(404).send('Course id does not exist');
+        //res.send(coursefound);
+
+    //delete
+    const index = courses.indexOf(coursefound);
+    //const data = courses.pop(index);
+
+    courses.splice(index,1);
+    //return the same course
+    //return data;
+    res.send(courses);
+});
 
 // app.get('/api/posts/:year/:month',(req,res)=>{
 //     res.send(req.query);
